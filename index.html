@@ -3,71 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0f12" />
-  <meta name="description" content="Nemalikanti Chandrahaas - Data Analyst & Computer Science Student at SRMIST. Specializing in Power BI, SQL, Excel, Python, Data Analytics & Business Intelligence." />
-  <title>Nemalikanti Chandrahaas | Data Analyst & BI Specialist</title>
+  <meta name="theme-color" content="#06090e" />
+  <meta name="description" content="Nemalikanti Chandrahaas - Cinematic Data Analytics & Business Intelligence Portfolio. Specializing in Power BI, SQL, Excel, Python & Data Storytelling." />
+  <title>Nemalikanti Chandrahaas | Cinematic Data Analyst & BI Specialist</title>
   
-  <!-- Fonts -->
+  <!-- Fonts: Cinzel for Cinematic Titles, Plus Jakarta Sans for UI, DM Mono for Code & Data -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* CSS Custom Properties & Design System */
+    /* ==========================================================================
+       CINEMATIC DESIGN SYSTEM & PALETTES
+       ========================================================================== */
     :root {
-      --bg-dark: #0b0f12;
-      --panel-dark: #13191f;
-      --card-dark: #1a232b;
-      --card-border-dark: #26333f;
-      --text-dark: #f0f4f8;
-      --muted-dark: #8c9ba5;
+      /* Theme 1: Blade Runner Noir (Default) */
+      --bg-main: #05080c;
+      --bg-panel: rgba(12, 17, 26, 0.75);
+      --bg-card: rgba(18, 26, 38, 0.65);
+      --border-card: rgba(200, 241, 105, 0.18);
+      --border-card-hover: rgba(200, 241, 105, 0.6);
       
-      --bg-light: #f6f8fa;
-      --panel-light: #ffffff;
-      --card-light: #f0f4f8;
-      --card-border-light: #d8e2ea;
-      --text-light: #0f172a;
-      --muted-light: #64748b;
+      --accent-primary: #c8f169;      /* Neon Cyber Lime */
+      --accent-glow: rgba(200, 241, 105, 0.35);
+      --accent-secondary: #ff2e63;    /* Crimson Flare */
+      --accent-sec-glow: rgba(255, 46, 99, 0.4);
+      --accent-cyan: #00f2fe;         /* Anamorphic Blue */
+      --accent-gold: #fbbf24;         /* Oscar Gold */
 
-      /* Active theme variables - Default Dark */
-      --bg: var(--bg-dark);
-      --panel: var(--panel-dark);
-      --card: var(--card-dark);
-      --card-border: var(--card-border-dark);
-      --text: var(--text-dark);
-      --muted: var(--muted-dark);
-      
-      /* Vibrant Accent Palette */
-      --accent-maroon: #801b38;
-      --accent-maroon-glow: rgba(128, 27, 56, 0.4);
-      --accent-emerald: #10b981;
-      --accent-emerald-glow: rgba(16, 185, 129, 0.25);
-      --accent-lime: #c8f169;
-      --accent-lime-glow: rgba(200, 241, 105, 0.3);
-      --accent-gold: #f59e0b;
+      --text-main: #f3f6fc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
 
-      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-title: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'DM Mono', monospace;
 
-      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
       --radius-full: 9999px;
     }
 
-    [data-theme="light"] {
-      --bg: var(--bg-light);
-      --panel: var(--panel-light);
-      --card: var(--card-light);
-      --card-border: var(--card-border-light);
-      --text: var(--text-light);
-      --muted: var(--muted-light);
+    /* Color Grade Presets */
+    [data-grade="dune"] {
+      --bg-main: #0a0805;
+      --bg-panel: rgba(20, 16, 11, 0.8);
+      --bg-card: rgba(28, 22, 15, 0.7);
+      --border-card: rgba(245, 158, 11, 0.2);
+      --border-card-hover: rgba(245, 158, 11, 0.7);
+      --accent-primary: #f59e0b;
+      --accent-glow: rgba(245, 158, 11, 0.4);
+      --accent-secondary: #ef4444;
+      --accent-cyan: #fbbf24;
     }
 
-    /* Reset & Base Styles */
+    [data-grade="matrix"] {
+      --bg-main: #030a06;
+      --bg-panel: rgba(6, 20, 12, 0.8);
+      --bg-card: rgba(10, 30, 18, 0.7);
+      --border-card: rgba(16, 185, 129, 0.2);
+      --border-card-hover: rgba(16, 185, 129, 0.7);
+      --accent-primary: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.4);
+      --accent-secondary: #06b6d4;
+      --accent-cyan: #34d399;
+    }
+
+    [data-grade="interstellar"] {
+      --bg-main: #030712;
+      --bg-panel: rgba(15, 23, 42, 0.8);
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --border-card: rgba(56, 189, 248, 0.2);
+      --border-card-hover: rgba(56, 189, 248, 0.7);
+      --accent-primary: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.4);
+      --accent-secondary: #8b5cf6;
+      --accent-cyan: #818cf8;
+    }
+
+    /* Reset & Base Setup */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -77,15 +95,23 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      background-color: var(--bg-main);
+      color: var(--text-main);
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-main);
+      font-family: var(--font-body);
       line-height: 1.6;
       overflow-x: hidden;
-      transition: background-color var(--transition-smooth), color var(--transition-smooth);
+      position: relative;
+      min-height: 100vh;
+      selection-background-color: var(--accent-primary);
+      selection-color: #000;
+    }
+
+    ::selection {
+      background: var(--accent-primary);
+      color: #05080c;
     }
 
     a {
@@ -96,144 +122,380 @@
     button, input, textarea {
       font-family: inherit;
       color: inherit;
+      border: none;
+      outline: none;
     }
 
-    /* Scrollbar */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: var(--bg);
+      background: var(--bg-main);
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--card-border);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--muted);
+      background: var(--accent-primary);
     }
 
-    /* Utility Layout */
+    /* ==========================================================================
+       CINEMATIC ATMOSPHERIC OVERLAYS (Grain, Lens Flare, Letterbox)
+       ========================================================================== */
+    /* 35mm Film Grain Canvas */
+    #grainCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.045;
+    }
+
+    /* Interactive Spotlight & Lens Flare */
+    #spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 600px;
+      height: 600px;
+      margin-left: -300px;
+      margin-top: -300px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0, 242, 254, 0.08) 35%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      transition: transform 0.1s ease-out;
+      opacity: 0.85;
+    }
+
+    /* Anamorphic Top/Bottom Cinematic Bar Frame Accents */
+    .cinematic-frame-top, .cinematic-frame-bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background: #000;
+      z-index: 900;
+      pointer-events: none;
+    }
+    .cinematic-frame-top { top: 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .cinematic-frame-bottom { bottom: 0; border-top: 1px solid rgba(255,255,255,0.05); }
+
+    /* ==========================================================================
+       CINEMATIC INTRO / REEL OPENER SLATE
+       ========================================================================== */
+    .intro-slate {
+      position: fixed;
+      inset: 0;
+      background: #040609;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.8s var(--ease-cinematic), opacity 0.8s var(--ease-cinematic);
+    }
+    .intro-slate.dismissed {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.05);
+    }
+
+    .slate-header {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slate-title {
+      font-family: var(--font-title);
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff 20%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .slate-quote {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .slate-countdown {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .slate-bar {
+      width: 140px;
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .slate-progress {
+      width: 0%;
+      height: 100%;
+      background: var(--accent-primary);
+      box-shadow: 0 0 10px var(--accent-primary);
+      transition: width 2.2s linear;
+    }
+
+    .skip-intro-btn {
+      margin-top: 24px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .skip-intro-btn:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    /* ==========================================================================
+       LAYOUT CONTAINER & GLASS PANELS
+       ========================================================================== */
     .shell {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
+      position: relative;
+      z-index: 10;
     }
 
-    /* Glassmorphism Panels */
     .glass-panel {
-      background: rgba(19, 25, 31, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-    }
-    [data-theme="light"] .glass-panel {
-      background: rgba(255, 255, 255, 0.85);
+      background: var(--bg-panel);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-card);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
-    /* Header & Navigation */
+    /* ==========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================== */
     header.topbar {
       position: sticky;
-      top: 0;
-      z-index: 100;
+      top: 20px;
+      z-index: 500;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 24px;
-      margin-top: 12px;
-      border-radius: var(--radius-md);
-      transition: background var(--transition-fast), border-color var(--transition-fast);
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      margin-top: 24px;
+      transition: all 0.3s var(--ease-cinematic);
+    }
+    header.topbar:hover {
+      border-color: var(--border-card-hover);
+      box-shadow: 0 0 30px var(--accent-glow);
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
+      font-family: var(--font-title);
       font-size: 18px;
-      letter-spacing: -0.03em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
-    .brand-avatar-badge {
+    .brand-badge {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-maroon), #b91c1c);
-      color: #fff;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+      color: #05080c;
       display: grid;
       place-items: center;
+      font-weight: 900;
       font-size: 13px;
-      font-weight: 800;
-      box-shadow: 0 0 12px var(--accent-maroon-glow);
+      font-family: var(--font-mono);
+      box-shadow: 0 0 16px var(--accent-glow);
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .nav-links a {
+      color: var(--text-muted);
       position: relative;
-      color: var(--muted);
-      transition: color var(--transition-fast);
+      padding: 4px 0;
+      transition: color 0.2s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-primary);
     }
 
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       left: 0;
-      width: 0%;
+      width: 0;
       height: 2px;
-      background: var(--accent-lime);
-      transition: width var(--transition-fast);
+      background: var(--accent-primary);
+      box-shadow: 0 0 8px var(--accent-primary);
+      transition: width 0.3s var(--ease-cinematic);
     }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
+    .nav-links a:hover::after, .nav-links a.active::after {
       width: 100%;
     }
 
-    .header-actions {
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .theme-toggle-btn {
-      background: var(--card);
-      border: 1px solid var(--card-border);
+    /* Sound FX & Grade Selector */
+    .control-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: var(--radius-full);
-      padding: 8px 14px;
-      font-size: 13px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-main);
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all var(--transition-fast);
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .control-pill:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
     }
 
-    .theme-toggle-btn:hover {
-      border-color: var(--accent-lime);
-      transform: translateY(-1px);
+    .sound-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+    }
+    .sound-bar {
+      width: 2px;
+      background: var(--accent-primary);
+      height: 40%;
+      border-radius: 1px;
+    }
+    .sound-bars.active .sound-bar:nth-child(1) { animation: soundWave 0.6s ease infinite alternate; }
+    .sound-bars.active .sound-bar:nth-child(2) { animation: soundWave 0.8s ease 0.2s infinite alternate; }
+    .sound-bars.active .sound-bar:nth-child(3) { animation: soundWave 0.5s ease 0.4s infinite alternate; }
+
+    @keyframes soundWave {
+      0% { height: 20%; }
+      100% { height: 100%; }
     }
 
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--card-border);
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
+    /* ==========================================================================
+       CINEMATIC HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: 90px 0 100px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(200, 241, 105, 0.08);
+      border: 1px solid var(--border-card);
+      color: var(--accent-primary);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+    }
+
+    .rec-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      box-shadow: 0 0 10px var(--accent-secondary);
+      animation: blinkRec 1.2s infinite;
+    }
+    @keyframes blinkRec {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(40px, 5.2vw, 68px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-primary);
+      font-weight: 400;
+      text-shadow: 0 0 25px var(--accent-glow);
+    }
+
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .hero-subtitle strong {
+      color: var(--text-main);
       font-weight: 600;
-      cursor: pointer;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
     /* Buttons */
@@ -241,277 +503,272 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 22px;
+      padding: 14px 28px;
       border-radius: var(--radius-full);
-      font-size: 14px;
+      font-size: 13px;
+      font-family: var(--font-mono);
       font-weight: 600;
+      letter-spacing: 0.05em;
       cursor: pointer;
-      border: 1px solid transparent;
-      transition: all var(--transition-fast);
+      transition: all 0.3s var(--ease-cinematic);
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary {
-      background: var(--accent-lime);
-      color: #0b0f12;
-      box-shadow: 0 4px 20px var(--accent-lime-glow);
+      background: var(--accent-primary);
+      color: #05080c;
+      box-shadow: 0 6px 24px var(--accent-glow);
     }
-
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(200, 241, 105, 0.45);
-      background: #d4f878;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 36px var(--accent-glow);
     }
 
     .btn-secondary {
-      background: var(--card);
-      color: var(--text);
-      border-color: var(--card-border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
-
     .btn-secondary:hover {
-      border-color: var(--text);
-      transform: translateY(-2px);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      transform: translateY(-3px);
+      background: rgba(200, 241, 105, 0.05);
     }
 
-    .btn-maroon {
-      background: linear-gradient(135deg, var(--accent-maroon), #6b1426);
-      color: #ffffff;
-      box-shadow: 0 4px 20px var(--accent-maroon-glow);
+    .btn-secondary-cyan {
+      background: rgba(0, 242, 254, 0.08);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+    }
+    .btn-secondary-cyan:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+      transform: translateY(-3px);
     }
 
-    .btn-maroon:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(128, 27, 56, 0.6);
-    }
-
-    /* Hero Section */
-    .hero-section {
-      padding: 70px 0 90px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-      position: relative;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: var(--accent-emerald);
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      font-family: var(--font-mono);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-emerald);
-      box-shadow: 0 0 10px var(--accent-emerald);
-      animation: pulseDot 2s infinite;
-    }
-
-    @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(1.3); }
-    }
-
-    .hero-title {
-      font-size: clamp(38px, 5vw, 62px);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
-    }
-
-    .hero-title em {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--accent-lime);
-    }
-
-    .typewriter-role {
-      color: #e23b62;
-      border-bottom: 2px solid #e23b62;
-      padding-bottom: 2px;
-    }
-
-    .hero-subtitle {
-      font-size: 17px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 36px;
-      max-width: 580px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    /* Hero Portrait Visual */
+    /* Hero Portrait Visual with 3D Tilt */
     .hero-visual {
       position: relative;
+      perspective: 1000px;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
 
-    .portrait-card-wrapper {
-      position: relative;
+    .portrait-poster-card {
       width: 100%;
-      max-width: 380px;
+      max-width: 390px;
       aspect-ratio: 4/5;
-      border-radius: 32px;
+      border-radius: 28px;
       padding: 12px;
-      background: linear-gradient(145deg, rgba(128, 27, 56, 0.3), rgba(25, 35, 45, 0.8));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(160deg, rgba(200, 241, 105, 0.25), rgba(12, 17, 26, 0.95) 60%);
+      border: 1px solid var(--border-card);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(200, 241, 105, 0.15);
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out;
+      cursor: pointer;
     }
 
-    .portrait-inner {
+    .portrait-poster-inner {
       width: 100%;
       height: 100%;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       position: relative;
     }
 
-    .portrait-inner img {
+    .portrait-poster-inner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      transition: transform 0.5s ease;
+      filter: contrast(1.05) brightness(1.02);
+      transition: transform 0.6s var(--ease-cinematic);
     }
 
-    .portrait-card-wrapper:hover .portrait-inner img {
-      transform: scale(1.04);
+    .portrait-poster-card:hover .portrait-poster-inner img {
+      transform: scale(1.06);
     }
 
-    .floating-metric-badge {
+    /* Anamorphic Lens Ring Effect */
+    .lens-glow-ring {
       position: absolute;
-      padding: 10px 16px;
+      inset: -2px;
+      border-radius: 30px;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, var(--accent-primary), transparent 50%, var(--accent-cyan)) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Floating Metric Badges */
+    .hero-metric-badge {
+      position: absolute;
+      padding: 12px 18px;
       border-radius: var(--radius-md);
-      font-size: 13px;
-      font-weight: 700;
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-card);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
       display: flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-      animation: floatBadge 6s ease-in-out infinite;
+      gap: 12px;
+      z-index: 20;
+      animation: floatBadge 5s ease-in-out infinite;
     }
 
-    .floating-metric-badge.top-right {
-      top: -16px;
-      right: -16px;
-      background: var(--panel);
-      border: 1px solid var(--accent-lime);
-      color: var(--text);
+    .hero-metric-badge.badge-top {
+      top: -20px;
+      right: -20px;
+      border-color: var(--accent-primary);
     }
 
-    .floating-metric-badge.bottom-left {
-      bottom: 24px;
-      left: -24px;
-      background: var(--panel);
-      border: 1px solid var(--accent-maroon);
-      color: var(--text);
-      animation-delay: 3s;
+    .hero-metric-badge.badge-bottom {
+      bottom: 20px;
+      left: -28px;
+      border-color: var(--accent-cyan);
+      animation-delay: 2.5s;
     }
 
     @keyframes floatBadge {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-10px); }
     }
 
-    /* Key Impact Stats Ticker Bar */
-    .stats-ticker-container {
-      margin: 20px 0 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+    .badge-icon {
+      font-size: 20px;
     }
-
-    .stat-box {
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .stat-box:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-lime);
-    }
-
-    .stat-number {
-      font-size: 38px;
+    .badge-val {
+      font-size: 15px;
       font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--accent-lime);
-      margin-bottom: 4px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+    }
+    .badge-lbl {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       font-family: var(--font-mono);
     }
 
-    .stat-label {
+    /* ==========================================================================
+       CINEMATIC BOX OFFICE METRICS BAR
+       ========================================================================== */
+    .metrics-ticker-grid {
+      margin: 20px 0 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .ticker-card {
+      padding: 28px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s var(--ease-cinematic);
+    }
+
+    .ticker-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ticker-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-card-hover);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .ticker-card:hover::before {
+      opacity: 1;
+    }
+
+    .ticker-number {
+      font-family: var(--font-mono);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--accent-primary);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+      text-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .ticker-title {
       font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
+      font-weight: 700;
+      color: var(--text-main);
     }
 
-    .stat-subtext {
+    .ticker-sub {
       font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: var(--font-mono);
     }
 
-    /* Section Headers */
+    /* ==========================================================================
+       SECTION HEADERS & CINEMATIC LABELS
+       ========================================================================== */
     .section-padding {
-      padding: 80px 0;
-      border-top: 1px solid var(--card-border);
+      padding: 90px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
-      margin-bottom: 44px;
+      margin-bottom: 50px;
+      align-items: flex-end;
     }
 
-    .section-tag {
+    .scene-tag {
       font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--accent-lime);
+      font-size: 12px;
+      color: var(--accent-primary);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
+      letter-spacing: 0.2em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scene-tag::before {
+      content: '//';
+      color: var(--text-dim);
     }
 
     .section-title {
-      font-size: clamp(30px, 4vw, 44px);
+      font-family: var(--font-title);
+      font-size: clamp(32px, 4vw, 48px);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
     }
 
     .section-desc {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 16px;
-      line-height: 1.7;
-      align-self: flex-end;
+      line-height: 1.75;
     }
 
-    /* About Cards Grid */
+    /* ==========================================================================
+       ABOUT CARDS (THE ARCHITECTURE)
+       ========================================================================== */
     .about-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -519,107 +776,116 @@
     }
 
     .about-card {
-      padding: 32px;
+      padding: 36px;
       border-radius: var(--radius-lg);
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 240px;
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      min-height: 280px;
+      transition: all 0.35s var(--ease-cinematic);
     }
 
     .about-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(200, 241, 105, 0.4);
+      transform: translateY(-8px);
+      border-color: var(--border-card-hover);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-glow);
     }
 
-    .about-card-num {
+    .about-step-badge {
       font-family: var(--font-mono);
-      font-size: 14px;
-      color: var(--accent-maroon);
-      background: rgba(128, 27, 56, 0.15);
-      width: fit-content;
-      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--accent-primary);
+      background: rgba(200, 241, 105, 0.1);
+      border: 1px solid var(--border-card);
+      padding: 4px 12px;
       border-radius: var(--radius-full);
+      width: fit-content;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .about-card h3 {
-      font-size: 20px;
+      font-family: var(--font-title);
+      font-size: 22px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
     }
 
     .about-card p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    /* Projects Controls & Grid */
+    /* ==========================================================================
+       FEATURED WORK / PROJECTS SHOWCASE
+       ========================================================================== */
     .projects-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 32px;
+      gap: 20px;
+      margin-bottom: 36px;
     }
 
     .filter-tabs {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .filter-btn {
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: var(--radius-full);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--muted);
-      font-size: 13px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-family: var(--font-mono);
       font-weight: 600;
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: all 0.25s ease;
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--accent-lime);
-      color: #0b0f12;
-      border-color: var(--accent-lime);
+      background: var(--accent-primary);
+      color: #05080c;
+      border-color: var(--accent-primary);
+      box-shadow: 0 4px 20px var(--accent-glow);
     }
 
     .search-box {
       position: relative;
-      width: 280px;
+      width: 300px;
     }
 
     .search-input {
       width: 100%;
-      padding: 10px 16px 10px 38px;
+      padding: 12px 18px 12px 42px;
       border-radius: var(--radius-full);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--text-main);
       font-size: 13px;
-      outline: none;
-      transition: border-color var(--transition-fast);
+      font-family: var(--font-mono);
+      transition: all 0.25s ease;
     }
 
     .search-input:focus {
-      border-color: var(--accent-lime);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     .search-icon {
       position: absolute;
-      left: 14px;
+      left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
       pointer-events: none;
     }
@@ -627,235 +893,357 @@
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 32px;
     }
 
-    .project-card {
-      padding: 32px;
+    .project-poster-card {
       border-radius: var(--radius-lg);
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      padding: 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 320px;
+      min-height: 340px;
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: all var(--transition-smooth);
+      transition: all 0.4s var(--ease-cinematic);
     }
 
-    .project-card::before {
+    .project-poster-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 4px;
       height: 100%;
-      background: var(--accent-maroon);
+      background: linear-gradient(180deg, var(--accent-primary), var(--accent-cyan));
       opacity: 0;
-      transition: opacity var(--transition-fast);
+      transition: opacity 0.3s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent-lime);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    .project-poster-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--border-card-hover);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.7), 0 0 35px var(--accent-glow);
     }
 
-    .project-card:hover::before {
+    .project-poster-card:hover::before {
       opacity: 1;
     }
 
-    .project-header {
+    .project-header-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
-    .project-category {
+    .project-cat-pill {
       font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--accent-lime);
+      font-size: 11px;
+      color: var(--accent-primary);
       background: rgba(200, 241, 105, 0.1);
-      padding: 4px 10px;
+      border: 1px solid var(--border-card);
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .project-year {
+    .project-release-year {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--muted);
+      color: var(--text-dim);
     }
 
-    .project-title {
+    .project-card-title {
+      font-family: var(--font-title);
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
     }
 
-    .project-desc {
-      color: var(--muted);
+    .project-card-desc {
+      color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.65;
-      margin-bottom: 24px;
+      line-height: 1.7;
+      margin-bottom: 28px;
     }
 
-    .project-footer {
+    .project-footer-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 13px;
-      font-weight: 600;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .project-stack {
+    .project-tech-stack {
       font-family: var(--font-mono);
-      color: var(--muted);
       font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .project-link-btn {
-      display: flex;
+    .project-action-btn {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--accent-lime);
-      transition: transform var(--transition-fast);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent-primary);
+      font-weight: 700;
+      transition: transform 0.2s ease;
     }
 
-    .project-card:hover .project-link-btn {
-      transform: translateX(4px);
+    .project-poster-card:hover .project-action-btn {
+      transform: translateX(6px);
     }
 
-    /* Skills Hub */
+    /* ==========================================================================
+       SKILLS MATRIX (THE TOOLKIT)
+       ========================================================================== */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 28px;
     }
 
-    .skill-category-card {
-      padding: 32px;
+    .skill-card {
+      padding: 36px;
       border-radius: var(--radius-lg);
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      transition: all 0.3s ease;
+    }
+    .skill-card:hover {
+      border-color: var(--border-card-hover);
+      transform: translateY(-4px);
     }
 
-    .skill-cat-title {
-      font-size: 18px;
+    .skill-cat-head {
+      font-family: var(--font-title);
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      color: var(--text-main);
     }
 
-    .skill-pills-list {
+    .skill-pills-wrap {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
     .skill-pill {
-      padding: 8px 14px;
+      padding: 8px 16px;
       border-radius: var(--radius-sm);
-      background: var(--panel);
-      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       font-size: 13px;
-      font-weight: 600;
+      font-family: var(--font-mono);
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: all var(--transition-fast);
+      transition: all 0.2s ease;
     }
 
     .skill-pill:hover {
-      border-color: var(--accent-lime);
-      color: var(--accent-lime);
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      background: rgba(200, 241, 105, 0.08);
       transform: translateY(-2px);
     }
 
-    /* Timeline Section */
-    .timeline-container {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      gap: 28px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 24px;
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      transition: border-color var(--transition-fast);
-    }
-
-    .timeline-item:hover {
-      border-color: var(--accent-maroon);
-    }
-
-    .timeline-date {
+    /* ==========================================================================
+       INTERACTIVE CINEMATIC TERMINAL CONSOLE
+       ========================================================================== */
+    .terminal-container {
+      border-radius: var(--radius-lg);
+      background: #020407;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.9);
+      overflow: hidden;
       font-family: var(--font-mono);
+    }
+
+    .terminal-bar {
+      background: #0d131d;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .t-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .t-dot.red { background: #ff5f56; }
+    .t-dot.yellow { background: #ffbd2e; }
+    .t-dot.green { background: #27c93f; }
+
+    .terminal-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      min-height: 280px;
+      max-height: 380px;
+      overflow-y: auto;
+      color: var(--accent-primary);
       font-size: 13px;
-      color: var(--accent-lime);
-      font-weight: 600;
-    }
-
-    .timeline-content h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .timeline-content p {
-      color: var(--muted);
-      font-size: 14px;
       line-height: 1.6;
     }
 
-    /* Contact Form & Card */
-    .contact-container {
+    .terminal-output {
+      margin-bottom: 16px;
+      white-space: pre-wrap;
+    }
+
+    .terminal-prompt-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terminal-prompt-label {
+      color: var(--accent-cyan);
+    }
+
+    .terminal-input {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 13px;
+      font-family: var(--font-mono);
+      width: 100%;
+      outline: none;
+    }
+
+    /* Quick Action Commands */
+    .terminal-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+      background: #070a10;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .term-chip {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .term-chip:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    /* ==========================================================================
+       JOURNEY & TIMELINE (FILM REEL)
+       ========================================================================== */
+    .reel-timeline {
+      display: grid;
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .reel-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      padding: 28px 36px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .reel-item:hover {
+      border-color: var(--border-card-hover);
+      transform: translateX(6px);
+    }
+
+    .reel-date {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent-primary);
+      font-weight: 700;
+    }
+
+    .reel-content h3 {
+      font-family: var(--font-title);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .reel-content p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       CONTACT FORM & CREDITS ROLL
+       ========================================================================== */
+    .contact-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 48px;
+      gap: 50px;
       align-items: start;
     }
 
     .contact-info-card {
-      padding: 36px;
+      padding: 40px;
       border-radius: var(--radius-lg);
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
     }
 
-    .contact-email-link {
+    .copy-email-box {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
+      gap: 12px;
+      padding: 14px 22px;
       border-radius: var(--radius-md);
-      background: var(--panel);
-      border: 1px solid var(--card-border);
-      color: var(--accent-lime);
+      background: rgba(200, 241, 105, 0.08);
+      border: 1px solid var(--border-card);
+      color: var(--accent-primary);
       font-family: var(--font-mono);
       font-size: 13px;
-      margin-top: 20px;
+      margin-top: 24px;
       cursor: pointer;
-      transition: border-color var(--transition-fast);
+      transition: all 0.25s ease;
     }
-
-    .contact-email-link:hover {
-      border-color: var(--accent-lime);
+    .copy-email-box:hover {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     .form-group {
@@ -866,404 +1254,407 @@
     }
 
     .form-group label {
-      font-size: 12px;
+      font-size: 11px;
       font-family: var(--font-mono);
       text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
     }
 
     .form-control {
-      padding: 14px 16px;
+      padding: 14px 18px;
       border-radius: var(--radius-sm);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      color: var(--text-main);
       font-size: 14px;
-      outline: none;
-      transition: border-color var(--transition-fast);
+      transition: all 0.25s ease;
     }
 
     .form-control:focus {
-      border-color: var(--accent-lime);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 20px var(--accent-glow);
     }
 
     textarea.form-control {
       resize: vertical;
-      min-height: 130px;
+      min-height: 140px;
     }
 
-    .form-message {
-      padding: 12px 16px;
+    .form-msg {
+      padding: 12px 18px;
       border-radius: var(--radius-sm);
       font-size: 13px;
-      font-weight: 600;
-      margin-top: 14px;
+      font-family: var(--font-mono);
+      margin-top: 16px;
       display: none;
     }
-
-    .form-message.success {
+    .form-msg.success {
       display: block;
       background: rgba(16, 185, 129, 0.15);
-      border: 1px solid var(--accent-emerald);
-      color: var(--accent-emerald);
+      border: 1px solid #10b981;
+      color: #10b981;
     }
-
-    .form-message.error {
+    .form-msg.error {
       display: block;
-      background: rgba(226, 59, 98, 0.15);
-      border: 1px solid #e23b62;
-      color: #e23b62;
+      background: rgba(255, 46, 99, 0.15);
+      border: 1px solid #ff2e63;
+      color: #ff2e63;
     }
 
-    /* Modal Styles */
+    /* Footer Credits */
+    footer {
+      padding: 50px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Modal Backdrop */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
+      z-index: 2000;
+      background: rgba(2, 4, 8, 0.85);
+      backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s var(--ease-cinematic);
     }
-
     .modal-backdrop.open {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .modal-card {
-      background: var(--panel);
-      border: 1px solid var(--card-border);
+    .modal-window {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-card-hover);
       border-radius: var(--radius-lg);
       width: 100%;
-      max-width: 680px;
+      max-width: 720px;
       max-height: 85vh;
       overflow-y: auto;
-      padding: 36px;
+      padding: 40px;
       position: relative;
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      transform: translateY(30px) scale(0.97);
+      transition: transform 0.3s var(--ease-cinematic);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+    }
+    .modal-backdrop.open .modal-window {
+      transform: translateY(0) scale(1);
     }
 
-    .modal-backdrop.open .modal-card {
-      transform: translateY(0);
-    }
-
-    .modal-close-btn {
+    .modal-close {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--muted);
-      width: 36px;
-      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--text-muted);
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       cursor: pointer;
       font-size: 18px;
+      transition: all 0.2s ease;
     }
-
-    .modal-close-btn:hover {
-      color: var(--text);
-      border-color: var(--text);
-    }
-
-    /* Footer */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--card-border);
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      color: var(--muted);
+    .modal-close:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
     }
 
     /* Toast Notification */
-    .toast {
+    .toast-popup {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 2000;
-      padding: 12px 20px;
+      bottom: 30px;
+      right: 30px;
+      z-index: 3000;
+      padding: 14px 24px;
       border-radius: var(--radius-md);
-      background: var(--panel);
-      border: 1px solid var(--accent-lime);
-      color: var(--text);
+      background: #0d131d;
+      border: 1px solid var(--accent-primary);
+      color: var(--text-main);
       font-size: 13px;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      font-family: var(--font-mono);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
       transform: translateY(100px);
       opacity: 0;
-      transition: all 0.3s ease;
+      transition: all 0.3s var(--ease-cinematic);
     }
-
-    .toast.show {
+    .toast-popup.show {
       transform: translateY(0);
       opacity: 1;
     }
 
-    /* Responsive Queries */
+    /* Responsive Breakdown */
     @media (max-width: 992px) {
-      .hero-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 40px 0 60px;
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .section-head, .contact-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .about-cards-grid, .skills-grid {
-        grid-template-columns: 1fr;
-      }
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-      .search-box {
-        width: 100%;
-      }
+      .hero-section { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-subtitle { margin: 0 auto 36px; }
+      .hero-ctas { justify-content: center; }
+      .section-head, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+      .about-cards-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .reel-item { grid-template-columns: 1fr; gap: 12px; }
     }
   </style>
 </head>
-<body>
+<body data-grade="blade">
 
-  <!-- Toast Notification -->
-  <div id="toast" class="toast">Action completed successfully</div>
+  <!-- 35mm Film Grain Canvas Layer -->
+  <canvas id="grainCanvas"></canvas>
 
-  <!-- Modal Container -->
+  <!-- Dynamic Spotlight Lens Flare -->
+  <div id="spotlight"></div>
+
+  <!-- Cinematic Frame Edge Accents -->
+  <div class="cinematic-frame-top"></div>
+  <div class="cinematic-frame-bottom"></div>
+
+  <!-- Toast Notification Popup -->
+  <div id="toastPopup" class="toast-popup">System Ready</div>
+
+  <!-- INTRO SLATE / OPENER CURTAIN -->
+  <div id="introSlate" class="intro-slate">
+    <div class="slate-header">DIRECTED BY DATA & BUSINESS INTELLIGENCE</div>
+    <h1 class="slate-title">NEMALIKANTI CHANDRAHAAS</h1>
+    <p class="slate-quote">"Turning raw multi-dimensional data into executive clarity & decision dashboards."</p>
+    <div class="slate-countdown">
+      <span>INITIALIZING BI ENGINE</span>
+      <div class="slate-bar"><div id="slateProgress" class="slate-progress"></div></div>
+    </div>
+    <button class="skip-intro-btn" onclick="dismissIntro()">PRESS ENTER OR CLICK TO START ↵</button>
+  </div>
+
+  <!-- MODAL CONTAINER -->
   <div id="modalBackdrop" class="modal-backdrop" onclick="closeModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+    <div class="modal-window" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
       <div id="modalContent"></div>
     </div>
   </div>
 
   <div class="shell">
     
-    <!-- Top Navigation Bar -->
+    <!-- TOPBAR NAVIGATION -->
     <header class="topbar glass-panel">
-      <a href="#home" class="brand-logo">
-        <div class="brand-avatar-badge">NC</div>
-        <span>Chandrahaas<span style="color:var(--accent-lime)">.</span></span>
+      <a href="#home" class="brand-logo" onclick="playAudioFx('click')">
+        <div class="brand-badge">NC</div>
+        <span>CHANDRAHAAS<span style="color:var(--accent-primary)">.</span></span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#timeline">Journey</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="active" onclick="playAudioFx('click')">Home</a></li>
+        <li><a href="#about" onclick="playAudioFx('click')">About</a></li>
+        <li><a href="#projects" onclick="playAudioFx('click')">Work</a></li>
+        <li><a href="#skills" onclick="playAudioFx('click')">Stack</a></li>
+        <li><a href="#terminal" onclick="playAudioFx('click')">Console</a></li>
+        <li><a href="#timeline" onclick="playAudioFx('click')">Journey</a></li>
+        <li><a href="#contact" onclick="playAudioFx('click')">Contact</a></li>
       </ul>
 
-      <div class="header-actions">
-        <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-          <span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span>
+      <div class="nav-actions">
+        <!-- Color Grade Switcher -->
+        <button class="control-pill" onclick="cycleColorGrade()" title="Switch Cinematic Color Grade">
+          <span>🎨</span> <span id="gradeLabel">Cyber Noir</span>
         </button>
-        <button class="btn btn-secondary" onclick="openResumeModal()" style="padding:8px 16px; font-size:13px;">
-          Resume CV 📄
+
+        <!-- Sound FX Toggle -->
+        <button class="control-pill" onclick="toggleAudio()" title="Toggle Web Audio SFX">
+          <div id="soundBars" class="sound-bars active">
+            <div class="sound-bar"></div><div class="sound-bar"></div><div class="sound-bar"></div>
+          </div>
+          <span id="soundLabel">SFX ON</span>
+        </button>
+
+        <!-- Resume Button -->
+        <button class="btn btn-secondary-cyan" onclick="openResumeModal(); playAudioFx('click');" style="padding: 8px 18px; font-size:12px;">
+          CV / Resume 📄
         </button>
       </div>
     </header>
 
-    <!-- Main Hero Section -->
+    <!-- HERO SECTION -->
     <section id="home" class="hero-section">
       <div>
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          <span>Open for Data Analyst & Business Intelligence Roles</span>
+        <div class="hero-tag">
+          <span class="rec-dot"></span>
+          <span>AVAILABLE FOR DATA ANALYST & BI ROLES</span>
         </div>
 
         <h1 class="hero-title">
-          Transforming data into <em>business insights</em> & dashboards<span style="color:var(--accent-lime)">.</span>
+          Transforming data into <em>business insights</em> & dashboards<span style="color:var(--accent-primary)">.</span>
         </h1>
 
         <p class="hero-subtitle">
-          Hi, I’m <strong>Nemalikanti Chandrahaas</strong>, a B.Tech Computer Science student at <strong>SRM Institute of Science & Technology (CGPA 9.24 / 10)</strong>. I specialize in <strong>Data Analytics, Power BI, SQL, and Business Intelligence</strong>, turning complex raw datasets into interactive executive dashboards and decision metrics.
+          I am <strong>Nemalikanti Chandrahaas</strong>, a Computer Science student at <strong>SRM Institute of Science & Technology (CGPA 9.24 / 10)</strong>. I specialize in <strong>Power BI, SQL, Excel, and Python Analytics</strong>, translating complex raw datasets into executive dashboards and predictive metrics.
         </p>
 
         <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary">
-            Explore Selected Work ↘
+          <a href="#projects" class="btn btn-primary" onclick="playAudioFx('click')">
+            EXPLORE SELECTED WORK ↘
           </a>
-          <button onclick="openResumeModal()" class="btn btn-maroon">
-            View Resume 📄
+          <button onclick="openResumeModal(); playAudioFx('click')" class="btn btn-secondary">
+            VIEW RESUME CV 📄
           </button>
-          <a href="#contact" class="btn btn-secondary">
-            Get In Touch ✉️
+          <a href="#terminal" class="btn btn-secondary-cyan" onclick="playAudioFx('click')">
+            LAUNCH CONSOLE ⚡
           </a>
         </div>
       </div>
 
-      <!-- Real Profile Photo Visual -->
+      <!-- Hero Visual with 3D Poster Tilt -->
       <div class="hero-visual">
-        <div class="portrait-card-wrapper">
-          <div class="portrait-inner">
+        <div id="portraitCard" class="portrait-poster-card" onmousemove="handlePosterTilt(event)" onmouseleave="resetPosterTilt()">
+          <div class="lens-glow-ring"></div>
+          <div class="portrait-poster-inner">
             <img src="profile.jpg" alt="Nemalikanti Chandrahaas" id="profileImg" onerror="handleImgError(this)" />
           </div>
 
-          <div class="floating-metric-badge top-right">
-            <span style="font-size:16px;">🎓</span>
+          <div class="hero-metric-badge badge-top">
+            <span class="badge-icon">🎓</span>
             <div>
-              <div style="font-size:11px; color:var(--muted); text-transform:uppercase;">SRMIST CGPA</div>
-              <div>9.24 / 10</div>
+              <div class="badge-lbl">SRMIST CGPA</div>
+              <div class="badge-val">9.24 / 10</div>
             </div>
           </div>
 
-          <div class="floating-metric-badge bottom-left">
-            <span style="font-size:16px;">📜</span>
+          <div class="hero-metric-badge badge-bottom">
+            <span class="badge-icon">📜</span>
             <div>
-              <div style="font-size:11px; color:var(--muted); text-transform:uppercase;">ICMREST 2026</div>
-              <div>Paper Accepted</div>
+              <div class="badge-lbl">ICMREST 2026</div>
+              <div class="badge-val">PAPER ACCEPTED</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Metrics Ticker Bar -->
-    <div class="stats-ticker-container">
-      <div class="stat-box">
-        <div class="stat-number">9.24</div>
-        <div class="stat-label">Cumulative GPA / 10</div>
-        <div class="stat-subtext">SRM Institute of Science & Tech</div>
+    <!-- BOX OFFICE METRICS TICKER BAR -->
+    <div class="metrics-ticker-grid">
+      <div class="ticker-card">
+        <div class="ticker-number">9.24</div>
+        <div class="ticker-title">Cumulative GPA / 10</div>
+        <div class="ticker-sub">SRMIST B.Tech Computer Science</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-number">4+</div>
-        <div class="stat-label">Data & BI Projects</div>
-        <div class="stat-subtext">Power BI, SQL, Excel, Python</div>
+      <div class="ticker-card">
+        <div class="ticker-number">5.9K+</div>
+        <div class="ticker-title">Transactions Analyzed</div>
+        <div class="ticker-sub">Power BI & DAX Modeling</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-number">1</div>
-        <div class="stat-label">Research Publication</div>
-        <div class="stat-subtext">ICMREST International Conf.</div>
+      <div class="ticker-card">
+        <div class="ticker-number">1</div>
+        <div class="ticker-title">Research Publication</div>
+        <div class="ticker-sub">ICMREST 2026 International Conf.</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-number">2+</div>
-        <div class="stat-label">Professional Credentials</div>
-        <div class="stat-subtext">Google Data Analytics & NPTEL</div>
+      <div class="ticker-card">
+        <div class="ticker-number">2+</div>
+        <div class="ticker-title">Global Credentials</div>
+        <div class="ticker-sub">Google Data Analytics & NPTEL</div>
       </div>
     </div>
 
-    <!-- About Section -->
+    <!-- SCENE 01: ABOUT / ARCHITECTURE -->
     <section id="about" class="section-padding">
       <div class="section-head">
         <div>
-          <div class="section-tag">01 / About</div>
+          <div class="scene-tag">SCENE 01 / ARCHITECTURE</div>
           <h2 class="section-title">Data Analytics Focus.<br/>Business Intelligence Execution.</h2>
         </div>
         <p class="section-desc">
-          I specialize in taking raw, complex datasets and extracting actionable business intelligence. From Power Query data transformation and SQL manipulation to DAX metrics and executive Power BI dashboards.
+          Specialized in transforming raw, multi-dimensional transactional datasets into decision metrics. From ETL pipelines in Power Query and complex SQL aggregation to custom DAX metrics and executive Power BI dashboards.
         </p>
       </div>
 
       <div class="about-cards-grid">
         <div class="about-card">
           <div>
-            <div class="about-card-num">STEP 01</div>
+            <div class="about-step-badge">ACT I</div>
             <h3>Data Cleaning & EDA</h3>
           </div>
-          <p>Transforming raw transactional datasets, handling missing data, data validation, and exploratory data analysis using Power Query, SQL, and Pandas.</p>
+          <p>Transforming raw transactional datasets, handling missing entries, data validation, and exploratory analysis using Power Query, SQL, and Pandas.</p>
         </div>
 
         <div class="about-card">
           <div>
-            <div class="about-card-num">STEP 02</div>
+            <div class="about-step-badge">ACT II</div>
             <h3>BI & KPI Modeling</h3>
           </div>
-          <p>Building custom DAX measures for Total Sales, Profit Margins, Order volumes, customer segment breakdown, and key performance indicators.</p>
+          <p>Engineering custom DAX measures for total sales revenue, profit margins, order volumes, customer segmentation, and year-over-year metrics.</p>
         </div>
 
         <div class="about-card">
           <div>
-            <div class="about-card-num">STEP 03</div>
+            <div class="about-step-badge">ACT III</div>
             <h3>Visual Storytelling</h3>
           </div>
-          <p>Designing executive Power BI dashboards, interactive Streamlit tools, KPI cards, and clear data visualization for data-driven decisions.</p>
+          <p>Designing interactive executive Power BI dashboards, Streamlit tools, KPI scorecards, and clear visualization reports for data-driven management decisions.</p>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- SCENE 02: FEATURED WORK / PROJECTS -->
     <section id="projects" class="section-padding">
       <div class="section-head">
         <div>
-          <div class="section-tag">02 / Selected Work</div>
-          <h2 class="section-title">Projects Built with<br/>Purpose & Rigor.</h2>
+          <div class="scene-tag">SCENE 02 / FEATURED PRODUCTIONS</div>
+          <h2 class="section-title">Projects Built with<br/>Rigor & Impact.</h2>
         </div>
         <p class="section-desc">
-          Explore interactive Power BI dashboards, data analytics pipelines, and text intelligence tools. Click any card for detailed KPI metrics and implementation details.
+          Explore interactive Power BI dashboards, data analytics pipelines, and NLP intelligence applications. Select any production card for detailed KPI metrics.
         </p>
       </div>
 
       <div class="projects-toolbar">
         <div class="filter-tabs">
-          <button class="filter-btn active" onclick="filterProjects('All', this)">All Projects</button>
-          <button class="filter-btn" onclick="filterProjects('Power BI & Dashboards', this)">Power BI & Dashboards</button>
+          <button class="filter-btn active" onclick="filterProjects('All', this)">All Work</button>
+          <button class="filter-btn" onclick="filterProjects('Power BI & Dashboards', this)">Power BI & BI</button>
           <button class="filter-btn" onclick="filterProjects('Data Analytics', this)">Data Analytics</button>
-          <button class="filter-btn" onclick="filterProjects('NLP & Text Analytics', this)">NLP & Text Analytics</button>
+          <button class="filter-btn" onclick="filterProjects('NLP & Text Analytics', this)">NLP & Text</button>
           <button class="filter-btn" onclick="filterProjects('Predictive Analytics', this)">Predictive Analytics</button>
         </div>
 
         <div class="search-box">
           <span class="search-icon">🔍</span>
-          <input type="text" id="projectSearch" class="search-input" placeholder="Search by tech or keyword..." oninput="handleSearch()" />
+          <input type="text" id="projectSearch" class="search-input" placeholder="Search tech, keyword..." oninput="handleSearch()" />
         </div>
       </div>
 
       <div id="projectsGrid" class="projects-grid">
-        <!-- Rendered dynamically by JavaScript -->
+        <!-- Rendered dynamically -->
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- SCENE 03: TECH STACK MATRIX -->
     <section id="skills" class="section-padding">
       <div class="section-head">
         <div>
-          <div class="section-tag">03 / Tech Stack</div>
-          <h2 class="section-title">Data Analytics & BI Tooling.</h2>
+          <div class="scene-tag">SCENE 03 / THE TOOLKIT</div>
+          <h2 class="section-title">Analytics & BI Stack.</h2>
         </div>
         <p class="section-desc">
-          Core competencies spanning Power BI dashboarding, DAX modeling, SQL database querying, data cleaning, Excel analysis, and Python analytics.
+          Core competencies spanning Power BI dashboarding, DAX modeling, SQL query optimization, Excel analytics, and Python data science tools.
         </p>
       </div>
 
       <div class="skills-grid">
-        <div class="skill-category-card">
-          <div class="skill-cat-title">
-            <span style="color:var(--accent-lime)">📊</span> Power BI & Business Intelligence
+        <div class="skill-card">
+          <div class="skill-cat-head">
+            <span style="color:var(--accent-primary)">📊</span> Power BI & Business Intelligence
           </div>
-          <div class="skill-pills-list">
+          <div class="skill-pills-wrap">
             <span class="skill-pill">📊 Power BI</span>
-            <span class="skill-pill">⚡ DAX Measures</span>
-            <span class="skill-pill">🔄 Power Query</span>
+            <span class="skill-pill">⚡ DAX Modeling</span>
+            <span class="skill-pill">🔄 Power Query ETL</span>
             <span class="skill-pill">📈 Executive Dashboards</span>
             <span class="skill-pill">🎯 KPI Analysis</span>
             <span class="skill-pill">📑 Microsoft Excel</span>
@@ -1271,161 +1662,204 @@
           </div>
         </div>
 
-        <div class="skill-category-card">
-          <div class="skill-cat-title">
-            <span style="color:var(--accent-lime)">🗄️</span> Databases & SQL Analytics
+        <div class="skill-card">
+          <div class="skill-cat-head">
+            <span style="color:var(--accent-primary)">🗄️</span> Databases & SQL Analytics
           </div>
-          <div class="skill-pills-list">
-            <span class="skill-pill">🗄️ SQL</span>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">🗄️ SQL Queries</span>
             <span class="skill-pill">🐬 MySQL</span>
-            <span class="skill-pill">💾 DBMS</span>
+            <span class="skill-pill">💾 DBMS Architecture</span>
             <span class="skill-pill">🔍 EDA Analysis</span>
             <span class="skill-pill">🧼 Data Cleaning</span>
-            <span class="skill-pill">✅ Data Validation</span>
-            <span class="skill-pill">⚡ Data Transformation</span>
+            <span class="skill-pill">✅ Validation Logic</span>
+            <span class="skill-pill">⚡ Data Pipelines</span>
           </div>
         </div>
 
-        <div class="skill-category-card">
-          <div class="skill-cat-title">
-            <span style="color:var(--accent-lime)">🐍</span> Python Analytics & Tools
+        <div class="skill-card">
+          <div class="skill-cat-head">
+            <span style="color:var(--accent-primary)">🐍</span> Python & Analytics Ecosystem
           </div>
-          <div class="skill-pills-list">
+          <div class="skill-pills-wrap">
             <span class="skill-pill">🐍 Python</span>
             <span class="skill-pill">📊 Pandas</span>
             <span class="skill-pill">🔢 NumPy</span>
             <span class="skill-pill">📉 Matplotlib / Seaborn</span>
             <span class="skill-pill">🚀 Streamlit</span>
-            <span class="skill-pill">📈 Descriptive Statistics</span>
+            <span class="skill-pill">📈 Statistics</span>
             <span class="skill-pill">🐙 Git / GitHub</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Journey / Timeline Section -->
-    <section id="timeline" class="section-padding">
+    <!-- SCENE 04: INTERACTIVE DATA CONSOLE -->
+    <section id="terminal" class="section-padding">
       <div class="section-head">
         <div>
-          <div class="section-tag">04 / Journey</div>
-          <h2 class="section-title">Milestones & Achievements.</h2>
+          <div class="scene-tag">SCENE 04 / LIVE DATA TERMINAL</div>
+          <h2 class="section-title">Director's Console.</h2>
         </div>
         <p class="section-desc">
-          Academic excellence, accepted research publications, and professional certifications.
+          Test interactive console commands to query Chandrahaas's BI metrics, SQL skills, research accepted paper details, or send direct inquiries.
         </p>
       </div>
 
-      <div class="timeline-container">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 — PRESENT</div>
-          <div class="timeline-content">
+      <div class="terminal-container">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+          </div>
+          <div class="terminal-title">chandrahaas@bi-console:~ (v2.6)</div>
+          <div style="font-size:11px; color:var(--text-dim);">BASH</div>
+        </div>
+
+        <div id="terminalBody" class="terminal-body">
+          <div class="terminal-output">Welcome to Chandrahaas Data Analytics Interactive Shell.
+Type 'help' to see available commands or click quick action tags below.</div>
+          <div class="terminal-prompt-line">
+            <span class="terminal-prompt-label">chandrahaas@bi-shell:~$</span>
+            <input type="text" id="terminalInput" class="terminal-input" placeholder="Type command here (e.g. stats, dax, paper, help)..." onkeydown="handleTerminalCommand(event)" />
+          </div>
+        </div>
+
+        <div class="terminal-chips">
+          <span class="term-chip" onclick="execTermCmd('stats')">$ stats</span>
+          <span class="term-chip" onclick="execTermCmd('projects')">$ projects</span>
+          <span class="term-chip" onclick="execTermCmd('paper')">$ paper</span>
+          <span class="term-chip" onclick="execTermCmd('dax')">$ dax</span>
+          <span class="term-chip" onclick="execTermCmd('clear')">$ clear</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 05: TIMELINE / JOURNEY REEL -->
+    <section id="timeline" class="section-padding">
+      <div class="section-head">
+        <div>
+          <div class="scene-tag">SCENE 05 / TIMELINE</div>
+          <h2 class="section-title">Milestones & Achievements.</h2>
+        </div>
+        <p class="section-desc">
+          Academic achievements at SRMIST, accepted research publications, and professional analytics certifications.
+        </p>
+      </div>
+
+      <div class="reel-timeline">
+        <div class="reel-item">
+          <div class="reel-date">2023 — PRESENT</div>
+          <div class="reel-content">
             <h3>SRM Institute of Science and Technology</h3>
             <p><strong>B.Tech in Computer Science and Engineering</strong> · Current CGPA: <strong>9.24 / 10</strong></p>
-            <p style="margin-top:4px;">Focus on Data Analysis, Business Intelligence, Database Management Systems (DBMS), SQL, Statistics, and Data Visualization.</p>
+            <p style="margin-top:6px;">Specialized in Data Analytics, Business Intelligence, Database Management Systems (DBMS), SQL, Statistics, and Data Visualization.</p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">2026</div>
-          <div class="timeline-content">
+        <div class="reel-item">
+          <div class="reel-date">2026 PUBLICATION</div>
+          <div class="reel-content">
             <h3>Research Paper Accepted · ICMREST</h3>
-            <p><strong>Title:</strong> <em>Intelligent customer behaviour driven e-commerce sales forecasting using machine learning.</em></p>
-            <p style="margin-top:4px;">Co-authored research on retail sales forecasting using ensemble methods and consumer behavioral signals.</p>
+            <p><strong>Title:</strong> <em>"Intelligent customer behaviour driven e-commerce sales forecasting using machine learning."</em></p>
+            <p style="margin-top:6px;">Co-authored research analyzing consumer purchase behavioral signals, feature correlation, and time-series demand forecasting.</p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">CERTIFICATION</div>
-          <div class="timeline-content">
+        <div class="reel-item">
+          <div class="reel-date">CERTIFICATION</div>
+          <div class="reel-content">
             <h3>Google Data Analytics Professional Certificate</h3>
-            <p>Comprehensive training covering data analysis processes, visualization with Power BI/Tableau, SQL queries, and decision support.</p>
+            <p>Comprehensive professional certification covering data cleaning, visualization with Power BI, SQL queries, and decision support frameworks.</p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">CERTIFICATION</div>
-          <div class="timeline-content">
+        <div class="reel-item">
+          <div class="reel-date">CERTIFICATION</div>
+          <div class="reel-content">
             <h3>NPTEL Certification in Python for Data Science</h3>
-            <p>Rigorous coursework covering numerical analysis, matrix operations, statistical modeling, and data manipulation in Python.</p>
+            <p>Rigorous coursework covering numerical computing, statistical modeling, matrix operations, and Pandas data structures.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- SCENE 06: CONTACT / CREDITS ROLL -->
     <section id="contact" class="section-padding">
-      <div class="contact-container">
+      <div class="contact-grid">
         <div class="contact-info-card">
-          <div class="section-tag">05 / Contact</div>
-          <h2 style="font-size:32px; font-weight:800; margin-bottom:14px;">Let’s Collaborate.</h2>
-          <p style="color:var(--muted); font-size:15px; line-height:1.65;">
-            Whether you have an opportunity for a Data Analyst role, a BI dashboarding project, or a data analytics inquiry, feel free to reach out.
+          <div class="scene-tag">SCENE 06 / CONTACT</div>
+          <h2 style="font-family:var(--font-title); font-size:36px; font-weight:800; margin-bottom:16px;">Let’s Collaborate.</h2>
+          <p style="color:var(--text-muted); font-size:15px; line-height:1.75;">
+            Whether you have an opening for a Data Analyst role, a Business Intelligence dashboarding project, or an analytics inquiry, feel free to reach out.
           </p>
 
-          <div class="contact-email-link" onclick="copyEmail()">
+          <div class="copy-email-box" onclick="copyEmail(); playAudioFx('click');">
             <span>✉️ nemalikantichandrahaas0204@gmail.com</span>
-            <span style="font-size:11px; opacity:0.8;">[Click to Copy]</span>
+            <span style="font-size:11px; opacity:0.8;">[CLICK TO COPY]</span>
           </div>
         </div>
 
-        <form id="contactForm" class="contact-form" onsubmit="submitForm(event)">
+        <form id="contactForm" onsubmit="submitForm(event)">
           <div class="form-group">
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe" />
+            <input type="text" id="name" name="name" class="form-control" required placeholder="Jane Doe" />
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com" />
+            <input type="email" id="email" name="email" class="form-control" required placeholder="jane@company.com" />
           </div>
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-control" placeholder="Project / Job Opportunity" />
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Data Analyst Role / Dashboard Inquiry" />
           </div>
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" class="form-control" required placeholder="Describe your inquiry or dataset..."></textarea>
+            <textarea id="message" name="message" class="form-control" required placeholder="Describe your data analysis project or opportunity..."></textarea>
           </div>
 
           <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%; justify-content:center;">
-            Send Message ↗
+            SEND MESSAGE ↗
           </button>
 
-          <div id="formStatus" class="form-message"></div>
+          <div id="formStatus" class="form-msg"></div>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER CREDITS -->
     <footer>
-      <div>© 2026 Nemalikanti Chandrahaas · Data Analyst</div>
-      <div>Power BI · SQL · Python · Excel · Data Analytics</div>
-      <a href="#home" style="color:var(--accent-lime); font-weight:600;">Back to Top ↑</a>
+      <div>© 2026 Nemalikanti Chandrahaas · Data Analyst & BI Specialist</div>
+      <div>SRMIST B.Tech CSE (9.24 CGPA) · Power BI · SQL · Python</div>
+      <a href="#home" onclick="playAudioFx('click')" style="color:var(--accent-primary); font-weight:600;">BACK TO TOP ↑</a>
     </footer>
 
   </div>
 
-  <!-- JavaScript Logic -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Project Data Definition
+    /* ==========================================================================
+       DATA DEFINITION
+       ========================================================================== */
     const projectsData = [
       {
         id: 'amazon-dashboard',
         title: 'Amazon Retail Sales & Profitability Dashboard',
         category: 'Power BI & Dashboards',
         year: '2026',
-        desc: 'Built an interactive Power BI dashboard analyzing 5,900+ retail transactions across sales, profitability, product categories, and customer segments.',
+        desc: 'Built an executive Power BI dashboard analyzing 5,900+ retail transactions across sales, profitability metrics, product sub-categories, and customer segments.',
         stack: 'Power BI · DAX · Power Query · Excel · Retail Analytics',
         details: {
-          problem: 'Retail management required executive visibility into sales performance, unprofitable sub-categories, order metrics, and regional customer trends.',
-          solution: 'Cleaned and transformed 5,900+ transactional records with Power Query and built an executive dashboard featuring dynamic KPI cards and slicers.',
+          problem: 'Retail management needed high-level executive visibility into revenue leaks, unprofitable sub-categories, order fulfillment, and regional customer trends.',
+          solution: 'Cleaned and transformed 5,900+ transactional records using Power Query, engineered custom DAX measures, and crafted a multi-page interactive dashboard.',
           highlights: [
-            'Analyzed 5,900+ retail transactions across sales, profitability, product categories, customer segments, and geographic regions.',
-            'Engineered custom DAX measures for Total Sales, Profit, Orders, Customers, Quantity, and Profit Margin %.',
-            'Cleaned and transformed raw retail data using Power Query, analyzing monthly trends, category performance, and sub-category profitability.',
-            'Designed an executive-style dashboard using KPI cards, charts, matrix tables, category slicers, and business-focused visual interactions.'
+            'Analyzed 5,900+ retail transactions across sales revenue, profit margins, product categories, and customer segments.',
+            'Engineered custom DAX measures for Total Sales, Net Profit, Order Volume, Unique Customers, and Profit Margin %.',
+            'Built dynamic category slicers, visual drill-through matrices, and visual interactions for data-driven decisions.'
           ],
           publication: 'Featured Data Analytics & BI Project (GitHub).'
         }
@@ -1435,15 +1869,15 @@
         title: 'Advanced NLP Text Intelligence Analyzer',
         category: 'NLP & Text Analytics',
         year: '2026',
-        desc: 'Python-based text analytics application processing unstructured data to generate analytical insights, sentiment trends, and topic classification.',
+        desc: 'Python-based text analytics application processing unstructured textual data to extract sentiment trends, keyword frequency, and topic classification.',
         stack: 'Python · NLTK · SpaCy · Streamlit · Text Analytics',
         details: {
-          problem: 'Unstructured customer reviews and text feedback require automated text analytics to extract actionable sentiment and topic trends.',
-          solution: 'Developed an automated NLP text analytics tool that extracts keywords, identifies topics, and scores sentiment breakdown.',
+          problem: 'Unstructured customer feedback and text reviews require automated NLP processing to identify actionable sentiment and emerging topic trends.',
+          solution: 'Developed an end-to-end Python NLP pipeline extracting sentiment scores, key phrases, and topic breakdown with interactive Streamlit visual UI.',
           highlights: [
-            'Processed unstructured textual data to generate clear analytical business insights.',
-            'Implemented sentiment analysis, keyword extraction, and topic classification for trend identification.',
-            'Built an interactive dashboard interface to present analytical results and support data-driven decision making.'
+            'Processed unstructured customer feedback to extract sentiment metrics and trend insights.',
+            'Implemented keyword extraction, sentiment scoring, and topic categorization.',
+            'Built an interactive Streamlit UI to visualize analytical results for decision makers.'
           ],
           publication: 'Python Text Analytics Application (GitHub).'
         }
@@ -1453,15 +1887,15 @@
         title: 'AI Job Description & Skill-Gap Analyzer',
         category: 'Data Analytics',
         year: '2025',
-        desc: 'Python-based job description analyzer extracting technical skill requirements, matching candidate profiles, and generating structured gap reports.',
-        stack: 'Python · Streamlit · SQLite · Scikit-learn · Data Analytics',
+        desc: 'Python-based role-fit analyzer extracting technical skill requirements from job descriptions, scoring candidate profiles, and generating gap reports.',
+        stack: 'Python · Streamlit · SQLite · Scikit-learn · Career Analytics',
         details: {
-          problem: 'Data job applicants need structured reporting to evaluate candidate skill alignment against complex job descriptions.',
-          solution: 'Created an intelligent role-fit analyzer comparing candidate profiles against raw job postings with scoring logic.',
+          problem: 'Data job applicants need structured reporting to evaluate candidate technical skill alignment against raw job postings.',
+          solution: 'Created an intelligent role-fit analyzer matching technical keywords, computing alignment scores, and highlighting skill gaps.',
           highlights: [
-            'Extracted technical skills and compared job requirements against candidate profiles.',
-            'Implemented keyword matching, skill-gap identification, scoring logic, and structured analytical reporting.',
-            'Integrated application tracking and analytics using Streamlit, SQLite, and Git/GitHub workflows.'
+            'Extracted technical skill keywords and compared requirements against candidate resumes.',
+            'Implemented alignment scoring logic, skill-gap breakdown, and structured reporting.',
+            'Integrated SQLite storage and Streamlit analytics workflow.'
           ],
           publication: 'Applied Career Analytics Tool (GitHub).'
         }
@@ -1471,10 +1905,10 @@
         title: 'E-commerce Sales Analytics & Forecasting',
         category: 'Predictive Analytics',
         year: '2026',
-        desc: 'Customer behavior analytics and time-series sales forecasting workflow evaluating consumer purchasing patterns and demand trends.',
+        desc: 'Consumer behavioral analytics and time-series sales forecasting workflow evaluating purchase patterns and seasonal demand trends.',
         stack: 'Python · Pandas · SQL · Predictive Analytics',
         details: {
-          problem: 'E-commerce businesses need data insights to forecast demand trends and optimize inventory decisions.',
+          problem: 'E-commerce businesses need empirical insights to forecast demand trends and optimize inventory allocations.',
           solution: 'Executed exploratory data analytics and predictive regression modeling driven by customer interaction data.',
           highlights: [
             'Analyzed consumer interaction metrics and historical sales seasonality trends.',
@@ -1486,35 +1920,184 @@
       }
     ];
 
-    let currentFilter = 'All';
+    /* ==========================================================================
+       CINEMATIC WEB AUDIO API SYNTHESIZER (Zero external MP3 dependencies)
+       ========================================================================== */
+    let audioEnabled = true;
+    let audioCtx = null;
 
-    // Theme Management
-    function toggleTheme() {
-      const body = document.body;
-      const themeIcon = document.getElementById('themeIcon');
-      const themeLabel = document.getElementById('themeLabel');
-      
-      if (body.getAttribute('data-theme') === 'light') {
-        body.removeAttribute('data-theme');
-        themeIcon.textContent = '🌙';
-        themeLabel.textContent = 'Dark';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        body.setAttribute('data-theme', 'light');
-        themeIcon.textContent = '☀️';
-        themeLabel.textContent = 'Light';
-        localStorage.setItem('theme', 'light');
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
       }
     }
 
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.setAttribute('data-theme', 'light');
-      document.getElementById('themeIcon').textContent = '☀️';
-      document.getElementById('themeLabel').textContent = 'Light';
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      const label = document.getElementById('soundLabel');
+      const bars = document.getElementById('soundBars');
+      if (audioEnabled) {
+        label.textContent = 'SFX ON';
+        bars.classList.add('active');
+        playAudioFx('click');
+      } else {
+        label.textContent = 'SFX OFF';
+        bars.classList.remove('active');
+      }
     }
 
-    // Render Projects Grid
+    function playAudioFx(type) {
+      if (!audioEnabled) return;
+      try {
+        initAudioContext();
+        if (!audioCtx) return;
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        const now = audioCtx.currentTime;
+
+        if (type === 'click') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(580, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.05);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'swell') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(120, now);
+          osc.frequency.exponentialRampToValueAtTime(440, now + 0.4);
+          gain.gain.setValueAtTime(0.01, now);
+          gain.gain.linearRampToValueAtTime(0.12, now + 0.2);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+          osc.start(now);
+          osc.stop(now + 0.4);
+        } else if (type === 'terminal') {
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(900, now);
+          gain.gain.setValueAtTime(0.03, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+          osc.start(now);
+          osc.stop(now + 0.03);
+        }
+      } catch (e) {
+        // Audio fallback
+      }
+    }
+
+    /* ==========================================================================
+       INTRO SLATE CONTROL & AUTO DISMISS
+       ========================================================================== */
+    const slateProgress = document.getElementById('slateProgress');
+    setTimeout(() => { if (slateProgress) slateProgress.style.width = '100%'; }, 100);
+
+    const autoIntroTimeout = setTimeout(() => {
+      dismissIntro();
+    }, 2400);
+
+    function dismissIntro() {
+      clearTimeout(autoIntroTimeout);
+      const slate = document.getElementById('introSlate');
+      if (slate && !slate.classList.contains('dismissed')) {
+        slate.classList.add('dismissed');
+        playAudioFx('swell');
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') dismissIntro();
+    });
+
+    /* ==========================================================================
+       CINEMATIC FILM GRAIN CANVAS & SPOTLIGHT MOVEMENT
+       ========================================================================== */
+    const grainCanvas = document.getElementById('grainCanvas');
+    const gCtx = grainCanvas ? grainCanvas.getContext('2d') : null;
+
+    function resizeGrain() {
+      if (!grainCanvas) return;
+      grainCanvas.width = window.innerWidth;
+      grainCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeGrain);
+    resizeGrain();
+
+    function renderGrain() {
+      if (!gCtx || !grainCanvas) return;
+      const w = grainCanvas.width;
+      const h = grainCanvas.height;
+      if (w === 0 || h === 0) return;
+
+      const imgData = gCtx.createImageData(w, h);
+      const buffer = new Uint32Array(imgData.data.buffer);
+      const len = buffer.length;
+
+      for (let i = 0; i < len; i += 4) {
+        const val = (Math.random() * 255) | 0;
+        buffer[i] = (val << 24) | (val << 16) | (val << 8) | val;
+      }
+      gCtx.putImageData(imgData, 0, 0);
+      requestAnimationFrame(renderGrain);
+    }
+    renderGrain();
+
+    /* Spotlight following cursor */
+    const spotlight = document.getElementById('spotlight');
+    document.addEventListener('mousemove', (e) => {
+      if (spotlight) {
+        spotlight.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      }
+    });
+
+    /* 3D Poster Tilt */
+    function handlePosterTilt(e) {
+      const card = document.getElementById('portraitCard');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      card.style.transform = `rotateY(${x / 18}deg) rotateX(${-y / 18}deg) scale(1.02)`;
+    }
+
+    function resetPosterTilt() {
+      const card = document.getElementById('portraitCard');
+      if (card) card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+    }
+
+    /* ==========================================================================
+       CINEMATIC COLOR GRADE SWITCHER
+       ========================================================================== */
+    const grades = ['blade', 'dune', 'matrix', 'interstellar'];
+    const gradeLabels = {
+      blade: 'Cyber Noir',
+      dune: 'Dune Gold',
+      matrix: 'Matrix Green',
+      interstellar: 'Stellar Blue'
+    };
+    let currentGradeIndex = 0;
+
+    function cycleColorGrade() {
+      currentGradeIndex = (currentGradeIndex + 1) % grades.length;
+      const newGrade = grades[currentGradeIndex];
+      document.body.setAttribute('data-grade', newGrade);
+      document.getElementById('gradeLabel').textContent = gradeLabels[newGrade];
+      showToast(`Color Grade: ${gradeLabels[newGrade]}`);
+      playAudioFx('click');
+    }
+
+    /* ==========================================================================
+       PROJECT RENDERING & FILTERING
+       ========================================================================== */
+    let currentFilter = 'All';
+
     function renderProjects(filter = 'All', searchQuery = '') {
       const grid = document.getElementById('projectsGrid');
       let filtered = projectsData;
@@ -1524,52 +2107,53 @@
       }
 
       if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
-        filtered = filtered.filter(p => 
-          p.title.toLowerCase().includes(query) ||
-          p.desc.toLowerCase().includes(query) ||
-          p.stack.toLowerCase().includes(query)
+        const q = searchQuery.toLowerCase();
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(q) ||
+          p.desc.toLowerCase().includes(q) ||
+          p.stack.toLowerCase().includes(q)
         );
       }
 
       if (filtered.length === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color:var(--muted);">No matching projects found.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color:var(--text-muted); font-family:var(--font-mono);">No matching productions found.</div>`;
         return;
       }
 
       grid.innerHTML = filtered.map(p => `
-        <article class="project-card" onclick="openProjectModal('${p.id}')">
+        <article class="project-poster-card" onclick="openProjectModal('${p.id}'); playAudioFx('swell');">
           <div>
-            <div class="project-header">
-              <span class="project-category">${p.category}</span>
-              <span class="project-year">${p.year}</span>
+            <div class="project-header-meta">
+              <span class="project-cat-pill">${p.category}</span>
+              <span class="project-release-year">${p.year}</span>
             </div>
-            <h3 class="project-title">${p.title}</h3>
-            <p class="project-desc">${p.desc}</p>
+            <h3 class="project-card-title">${p.title}</h3>
+            <p class="project-card-desc">${p.desc}</p>
           </div>
-          <div class="project-footer">
-            <span class="project-stack">${p.stack}</span>
-            <span class="project-link-btn">View Details ↗</span>
+          <div class="project-footer-bar">
+            <span class="project-tech-stack">${p.stack}</span>
+            <span class="project-action-btn">KPI DETAILS ↗</span>
           </div>
         </article>
       `).join('');
     }
 
-    // Filter Buttons Handler
     function filterProjects(category, btnElement) {
       currentFilter = category;
       document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
       btnElement.classList.add('active');
       renderProjects(currentFilter, document.getElementById('projectSearch').value);
+      playAudioFx('click');
     }
 
-    // Search Handler
     function handleSearch() {
-      const query = document.getElementById('projectSearch').value;
-      renderProjects(currentFilter, query);
+      const q = document.getElementById('projectSearch').value;
+      renderProjects(currentFilter, q);
     }
 
-    // Modal Control
+    /* ==========================================================================
+       MODALS & RESUME CV
+       ========================================================================== */
     function openModalHtml(htmlContent) {
       const backdrop = document.getElementById('modalBackdrop');
       const content = document.getElementById('modalContent');
@@ -1582,37 +2166,38 @@
       const backdrop = document.getElementById('modalBackdrop');
       backdrop.classList.remove('open');
       document.body.style.overflow = '';
+      playAudioFx('click');
     }
 
     function openProjectModal(id) {
-      const project = projectsData.find(p => p.id === id);
-      if (!project) return;
+      const p = projectsData.find(item => item.id === id);
+      if (!p) return;
 
       const html = `
-        <div style="font-family: var(--font-mono); font-size:12px; color:var(--accent-lime); margin-bottom:8px;">
-          ${project.category} · ${project.year}
+        <div style="font-family: var(--font-mono); font-size:12px; color:var(--accent-primary); margin-bottom:8px;">
+          ${p.category} · RELEASE ${p.year}
         </div>
-        <h2 style="font-size:28px; font-weight:800; margin-bottom:16px;">${project.title}</h2>
-        <p style="color:var(--muted); font-size:15px; line-height:1.6; margin-bottom:24px;">${project.desc}</p>
+        <h2 style="font-family:var(--font-title); font-size:28px; font-weight:800; margin-bottom:16px;">${p.title}</h2>
+        <p style="color:var(--text-muted); font-size:15px; line-height:1.7; margin-bottom:24px;">${p.desc}</p>
 
-        <div style="background:var(--card); padding:20px; border-radius:var(--radius-md); border:1px solid var(--card-border); margin-bottom:20px;">
-          <h4 style="font-size:14px; text-transform:uppercase; font-family:var(--font-mono); color:var(--accent-lime); margin-bottom:8px;">Core Problem & Solution</h4>
-          <p style="font-size:14px; margin-bottom:10px;"><strong>Problem:</strong> ${project.details.problem}</p>
-          <p style="font-size:14px;"><strong>Solution:</strong> ${project.details.solution}</p>
+        <div style="background:var(--bg-card); padding:24px; border-radius:var(--radius-md); border:1px solid var(--border-card); margin-bottom:24px;">
+          <h4 style="font-size:13px; text-transform:uppercase; font-family:var(--font-mono); color:var(--accent-primary); margin-bottom:10px;">CORE PROBLEM & SOLUTION</h4>
+          <p style="font-size:14px; margin-bottom:12px; color:var(--text-main);"><strong>Problem:</strong> ${p.details.problem}</p>
+          <p style="font-size:14px; color:var(--text-main);"><strong>Solution:</strong> ${p.details.solution}</p>
         </div>
 
-        <h4 style="font-size:14px; text-transform:uppercase; font-family:var(--font-mono); color:var(--text); margin-bottom:12px;">Key Highlights</h4>
-        <ul style="list-style:disc; padding-left:20px; font-size:14px; color:var(--muted); margin-bottom:24px;">
-          ${project.details.highlights.map(h => `<li style="margin-bottom:6px;">${h}</li>`).join('')}
+        <h4 style="font-size:13px; text-transform:uppercase; font-family:var(--font-mono); color:var(--text-main); margin-bottom:12px;">KEY HIGHLIGHTS & METRICS</h4>
+        <ul style="list-style:none; padding:0; font-size:14px; color:var(--text-muted); margin-bottom:24px;">
+          ${p.details.highlights.map(h => `<li style="margin-bottom:8px; display:flex; gap:10px;"><span>⚡</span> <span>${h}</span></li>`).join('')}
         </ul>
 
-        <div style="font-size:13px; font-family:var(--font-mono); color:var(--text); background:rgba(128, 27, 56, 0.15); padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--accent-maroon); margin-bottom:24px;">
-          📌 <strong>Outcome / Status:</strong> ${project.details.publication}
+        <div style="font-size:13px; font-family:var(--font-mono); color:var(--accent-primary); background:rgba(200, 241, 105, 0.08); padding:14px 18px; border-radius:var(--radius-sm); border:1px solid var(--border-card); margin-bottom:28px;">
+          📌 <strong>OUTCOME:</strong> ${p.details.publication}
         </div>
 
-        <div style="display:flex; gap:12px;">
-          <button class="btn btn-primary" onclick="showToast('Project documentation ready')">View Demo / Code ↗</button>
-          <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+        <div style="display:flex; gap:14px;">
+          <button class="btn btn-primary" onclick="showToast('Documentation & Code Ready'); playAudioFx('click');">VIEW REPO / DEMO ↗</button>
+          <button class="btn btn-secondary" onclick="closeModal()">CLOSE</button>
         </div>
       `;
       openModalHtml(html);
@@ -1620,27 +2205,27 @@
 
     function openResumeModal() {
       const html = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid var(--card-border); padding-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:18px;">
           <div>
-            <h2 style="font-size:24px; font-weight:800;">Nemalikanti Chandrahaas</h2>
-            <p style="font-family:var(--font-mono); font-size:13px; color:var(--accent-lime);">Data Analyst & Computer Science Undergraduate</p>
+            <h2 style="font-family:var(--font-title); font-size:26px; font-weight:800;">NEMALIKANTI CHANDRAHAAS</h2>
+            <p style="font-family:var(--font-mono); font-size:13px; color:var(--accent-primary);">Data Analyst & Computer Science Undergraduate</p>
           </div>
-          <button class="btn btn-primary" onclick="window.print()" style="padding:8px 16px; font-size:12px;">Print CV 🖨️</button>
+          <button class="btn btn-primary" onclick="window.print()" style="padding:8px 18px; font-size:12px;">PRINT CV 🖨️</button>
         </div>
 
         <div style="display:grid; gap:20px; font-size:14px;">
           <div>
-            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px;">Education</h4>
+            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">EDUCATION</h4>
             <p><strong>SRM Institute of Science and Technology</strong> (2023 - Present)<br/>B.Tech in Computer Science and Engineering | <strong>CGPA: 9.24 / 10</strong></p>
           </div>
 
           <div>
-            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px;">Research</h4>
+            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">RESEARCH PUBLICATION</h4>
             <p>Paper accepted at <strong>ICMREST International Conference (2026)</strong>:<br/><em>"Intelligent customer behaviour driven e-commerce sales forecasting using machine learning"</em></p>
           </div>
 
           <div>
-            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px;">Certifications</h4>
+            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">CERTIFICATIONS</h4>
             <ul style="padding-left:18px;">
               <li>Google Data Analytics Professional Certificate</li>
               <li>NPTEL Certification in Python for Data Science</li>
@@ -1648,15 +2233,100 @@
           </div>
 
           <div>
-            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--muted); margin-bottom:6px;">Technical Skills</h4>
-            <p><strong>Programming & Analytics:</strong> Python, SQL, Excel, Power BI, DAX, Power Query, Pandas, NumPy, MySQL, Data Cleaning, EDA, KPI Analysis, Data Storytelling, Streamlit, Git.</p>
+            <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">TECHNICAL SKILLS</h4>
+            <p style="line-height:1.6;"><strong>Tools & Technologies:</strong> Power BI, DAX, Power Query, SQL (MySQL), Python (Pandas, NumPy, Matplotlib, Seaborn), Microsoft Excel, Streamlit, Git, GitHub, Exploratory Data Analysis (EDA), KPI Modeling, Data Storytelling.</p>
           </div>
         </div>
       `;
       openModalHtml(html);
     }
 
-    // Contact Form AJAX Submission
+    /* ==========================================================================
+       INTERACTIVE TERMINAL CONSOLE ENGINE
+       ========================================================================== */
+    function execTermCmd(cmd) {
+      const input = document.getElementById('terminalInput');
+      input.value = cmd;
+      handleTerminalCommand({ key: 'Enter', target: input });
+    }
+
+    function handleTerminalCommand(e) {
+      if (e.key !== 'Enter') return;
+      const input = e.target;
+      const rawCmd = input.value.trim().toLowerCase();
+      if (!rawCmd) return;
+
+      playAudioFx('terminal');
+      const body = document.getElementById('terminalBody');
+
+      let responseText = '';
+
+      switch (rawCmd) {
+        case 'help':
+          responseText = `AVAILABLE COMMANDS:
+  stats        - Display academic & project metrics
+  projects     - List featured BI & data analytics projects
+  paper        - Show accepted research publication details
+  dax          - View DAX measures sample logic
+  skills       - Summary of technical analytics stack
+  clear        - Clear console screen`;
+          break;
+        case 'stats':
+          responseText = `CHANDRAHAAS ANALYTICS METRICS:
+  • SRMIST CGPA         : 9.24 / 10
+  • Retail Transactions : 5,900+ Records Analyzed
+  • Research Papers     : 1 Accepted (ICMREST 2026)
+  • Credentials         : Google Data Analytics & NPTEL Python`;
+          break;
+        case 'projects':
+          responseText = `FEATURED PRODUCTIONS:
+  1. Amazon Retail Sales & Profitability Dashboard (Power BI / DAX / 5.9K records)
+  2. Advanced NLP Text Intelligence Analyzer (Python / Streamlit / SpaCy)
+  3. AI Job Description & Skill-Gap Analyzer (Python / SQLite / Scikit-learn)
+  4. E-commerce Sales Analytics & Forecasting (ICMREST 2026 Paper)`;
+          break;
+        case 'paper':
+          responseText = `ICMREST 2026 INTERNATIONAL CONFERENCE:
+  Title    : "Intelligent customer behaviour driven e-commerce sales forecasting using machine learning"
+  Status   : ACCEPTED FOR PUBLICATION
+  Focus    : E-commerce behavioral signals & time-series demand forecasting`;
+          break;
+        case 'dax':
+          responseText = `SAMPLE DAX MEASURE MODELING:
+  Total Sales = SUM(Sales[Sales_Amount])
+  Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
+  YoY Sales Growth = CALCULATE([Total Sales], SAMEPERIODLASTYEAR('Calendar'[Date]))`;
+          break;
+        case 'skills':
+          responseText = `TECHNICAL STACK:
+  • BI & Data Viz : Power BI, DAX, Power Query, Excel, Streamlit
+  • Databases     : SQL, MySQL, DBMS Querying, Validation
+  • Data Science  : Python, Pandas, NumPy, Matplotlib, Seaborn, Git`;
+          break;
+        case 'clear':
+          body.innerHTML = `
+            <div class="terminal-prompt-line">
+              <span class="terminal-prompt-label">chandrahaas@bi-shell:~$</span>
+              <input type="text" id="terminalInput" class="terminal-input" placeholder="Type command here..." onkeydown="handleTerminalCommand(event)" />
+            </div>`;
+          return;
+        default:
+          responseText = `Command not recognized: '${rawCmd}'. Type 'help' for available commands.`;
+      }
+
+      const outputDiv = document.createElement('div');
+      outputDiv.className = 'terminal-output';
+      outputDiv.textContent = `> ${rawCmd}\n${responseText}`;
+
+      const promptLine = body.querySelector('.terminal-prompt-line');
+      body.insertBefore(outputDiv, promptLine);
+      input.value = '';
+      body.scrollTop = body.scrollHeight;
+    }
+
+    /* ==========================================================================
+       CONTACT FORM SUBMISSION TO SERVER (/api/contact)
+       ========================================================================== */
     async function submitForm(e) {
       e.preventDefault();
       const submitBtn = document.getElementById('submitBtn');
@@ -1664,8 +2334,8 @@
       const form = e.target;
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending Message...';
-      statusDiv.className = 'form-message';
+      submitBtn.textContent = 'SENDING TRANSMISSION...';
+      statusDiv.className = 'form-msg';
       statusDiv.textContent = '';
 
       const formData = {
@@ -1685,28 +2355,28 @@
 
         if (!res.ok) throw new Error(data.error || 'Submission failed');
 
-        statusDiv.className = 'form-message success';
-        statusDiv.textContent = '✓ Message delivered successfully! Chandrahaas will get back to you soon.';
+        statusDiv.className = 'form-msg success';
+        statusDiv.textContent = '✓ TRANSMISSION DELIVERED! Chandrahaas will respond shortly.';
         form.reset();
         showToast('Message sent successfully!');
+        playAudioFx('swell');
       } catch (err) {
-        statusDiv.className = 'form-message error';
+        statusDiv.className = 'form-msg error';
         statusDiv.textContent = 'Notice: Server offline or error. Please email directly at nemalikantichandrahaas0204@gmail.com';
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message ↗';
+        submitBtn.textContent = 'SEND MESSAGE ↗';
       }
     }
 
-    // Helper Toast
+    /* Helpers */
     function showToast(msg) {
-      const toast = document.getElementById('toast');
+      const toast = document.getElementById('toastPopup');
       toast.textContent = msg;
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3500);
+      setTimeout(() => toast.classList.remove('show'), 3200);
     }
 
-    // Copy Email Helper
     function copyEmail() {
       const email = 'nemalikantichandrahaas0204@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
@@ -1716,13 +2386,12 @@
       });
     }
 
-    // Image fallback handler
     function handleImgError(img) {
       img.onerror = null;
-      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="%23801b38"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23ffffff" font-family="sans-serif" font-size="24">Chandrahaas</text></svg>';
+      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="%230c111a"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23c8f169" font-family="Cinzel" font-size="24">CHANDRAHAAS</text></svg>';
     }
 
-    // Initial Render
+    /* Initialize */
     document.addEventListener('DOMContentLoaded', () => {
       renderProjects();
     });
