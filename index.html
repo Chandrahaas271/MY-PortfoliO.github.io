@@ -1621,6 +1621,7 @@
           <button class="filter-btn" onclick="filterProjects('Data Analytics', this)">Data Analytics</button>
           <button class="filter-btn" onclick="filterProjects('NLP & Text Analytics', this)">NLP & Text</button>
           <button class="filter-btn" onclick="filterProjects('Predictive Analytics', this)">Predictive Analytics</button>
+          <button class="filter-btn" onclick="filterProjects('ML & Machine Learning', this)">ML & Machine Learning</button>
         </div>
 
         <div class="search-box">
@@ -1729,6 +1730,7 @@ Type 'help' to see available commands or click quick action tags below.</div>
         <div class="terminal-chips">
           <span class="term-chip" onclick="execTermCmd('stats')">$ stats</span>
           <span class="term-chip" onclick="execTermCmd('projects')">$ projects</span>
+          <span class="term-chip" onclick="execTermCmd('ml')">$ ml</span>
           <span class="term-chip" onclick="execTermCmd('paper')">$ paper</span>
           <span class="term-chip" onclick="execTermCmd('dax')">$ dax</span>
           <span class="term-chip" onclick="execTermCmd('clear')">$ clear</span>
@@ -1916,6 +1918,27 @@ Type 'help' to see available commands or click quick action tags below.</div>
             'Co-authored research paper accepted at ICMREST 2026 international conference.'
           ],
           publication: 'Research Paper Accepted at ICMREST 2026.'
+        }
+      },
+      {
+        id: 'ml-salary-prediction',
+        title: 'ML Salary Prediction & HR Compensation Intelligence Dashboard',
+        category: 'ML & Machine Learning',
+        year: '2026',
+        desc: 'End-to-end ML application estimating monthly employee salary from experience, age, department, performance score & certifications — interactive HR dashboard with R² score of 92.55%.',
+        stack: 'Python · Scikit-learn · Linear Regression · JavaScript · HR Analytics',
+        githubUrl: 'https://github.com/Chandrahaas271/ML-salary-prediction',
+        details: {
+          problem: 'HR teams and compensation analysts lack a data-driven tool to objectively estimate fair monthly salaries based on employee profile attributes such as experience, age, department, performance score, and certification status.',
+          solution: 'Built an end-to-end ML pipeline: cleaned 89 raw records to 83 clean observations, engineered features, encoded categorical variables, trained a Linear Regression model with Scikit-learn, and wrapped everything in an interactive JavaScript dashboard covering salary prediction, KPI metrics, model analytics, data-pipeline insights, and employee-level analysis.',
+          highlights: [
+            'R² score of 92.55% — explaining over 92% of salary variance from just 5 input features.',
+            'MAE: INR 6,457 and RMSE: INR 7,610 on held-out test set — production-grade accuracy.',
+            'Full data pipeline: removed duplicates, handled missing values & outliers, engineered features, encoded categorical variables — reducing 89 raw records to 83 clean observations.',
+            'Interactive dashboard with 5 panels: Salary Prediction, KPI Metrics, Model Analytics, Data-Pipeline Insights, and Employee-Level Analysis.',
+            'Full-stack: Python (Scikit-learn, Pandas) ML backend + JavaScript interactive front-end dashboard.'
+          ],
+          publication: 'Live on GitHub: github.com/Chandrahaas271/ML-salary-prediction'
         }
       }
     ];
@@ -2196,7 +2219,7 @@ Type 'help' to see available commands or click quick action tags below.</div>
         </div>
 
         <div style="display:flex; gap:14px;">
-          <button class="btn btn-primary" onclick="showToast('Documentation & Code Ready'); playAudioFx('click');">VIEW REPO / DEMO ↗</button>
+          ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn btn-primary" onclick="playAudioFx('click');">VIEW GITHUB REPO &#8599;</a>` : `<button class="btn btn-primary" onclick="showToast('Documentation & Code Ready'); playAudioFx('click');">VIEW REPO / DEMO &#8599;</button>`}
           <button class="btn btn-secondary" onclick="closeModal()">CLOSE</button>
         </div>
       `;
@@ -2234,7 +2257,7 @@ Type 'help' to see available commands or click quick action tags below.</div>
 
           <div>
             <h4 style="font-family:var(--font-mono); font-size:12px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;">TECHNICAL SKILLS</h4>
-            <p style="line-height:1.6;"><strong>Tools & Technologies:</strong> Power BI, DAX, Power Query, SQL (MySQL), Python (Pandas, NumPy, Matplotlib, Seaborn), Microsoft Excel, Streamlit, Git, GitHub, Exploratory Data Analysis (EDA), KPI Modeling, Data Storytelling.</p>
+            <p style="line-height:1.6;"><strong>Tools & Technologies:</strong> Power BI, DAX, Power Query, SQL (MySQL), Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Microsoft Excel, Streamlit, Git, GitHub, Exploratory Data Analysis (EDA), KPI Modeling, Feature Engineering, Linear Regression, Data Storytelling.</p>
           </div>
         </div>
       `;
@@ -2265,7 +2288,8 @@ Type 'help' to see available commands or click quick action tags below.</div>
         case 'help':
           responseText = `AVAILABLE COMMANDS:
   stats        - Display academic & project metrics
-  projects     - List featured BI & data analytics projects
+  projects     - List all featured data analytics projects
+  ml / salary  - ML Salary Prediction project details
   paper        - Show accepted research publication details
   dax          - View DAX measures sample logic
   skills       - Summary of technical analytics stack
@@ -2283,7 +2307,19 @@ Type 'help' to see available commands or click quick action tags below.</div>
   1. Amazon Retail Sales & Profitability Dashboard (Power BI / DAX / 5.9K records)
   2. Advanced NLP Text Intelligence Analyzer (Python / Streamlit / SpaCy)
   3. AI Job Description & Skill-Gap Analyzer (Python / SQLite / Scikit-learn)
-  4. E-commerce Sales Analytics & Forecasting (ICMREST 2026 Paper)`;
+  4. E-commerce Sales Analytics & Forecasting (ICMREST 2026 Paper)
+  5. ML Salary Prediction & HR Compensation Dashboard (Scikit-learn / R²=92.55%)`;
+          break;
+        case 'ml':
+        case 'salary':
+          responseText = `ML SALARY PREDICTION PROJECT:
+  Model    : Linear Regression (Scikit-learn)
+  R² Score : 92.55%  |  MAE: INR 6,457  |  RMSE: INR 7,610
+  Features : Experience, Age, Department, Performance Score, Certifications
+  Dataset  : 89 raw records → 83 clean observations after full pipeline
+  Dashboard: Salary Prediction | KPI Metrics | Model Analytics
+             Data-Pipeline Insights | Employee-Level Analysis
+  GitHub   : github.com/Chandrahaas271/ML-salary-prediction`;
           break;
         case 'paper':
           responseText = `ICMREST 2026 INTERNATIONAL CONFERENCE:
@@ -2301,7 +2337,8 @@ Type 'help' to see available commands or click quick action tags below.</div>
           responseText = `TECHNICAL STACK:
   • BI & Data Viz : Power BI, DAX, Power Query, Excel, Streamlit
   • Databases     : SQL, MySQL, DBMS Querying, Validation
-  • Data Science  : Python, Pandas, NumPy, Matplotlib, Seaborn, Git`;
+  • Data Science  : Python, Pandas, NumPy, Matplotlib, Seaborn, Git
+  • ML / AI       : Scikit-learn, Linear Regression, Feature Engineering`;
           break;
         case 'clear':
           body.innerHTML = `

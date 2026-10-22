@@ -6,3 +6,11 @@
   "scripts": { "start": "node server.js" },
   "engines": { "node": ">=18" }
 }
+{
+  "name": "chandrahaas-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React portfolio with a small Node contact API",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
